@@ -24,6 +24,9 @@ public class User implements Serializable {
     private String confirmPassword;
     private boolean enabled = true;
 
+    @Column(nullable = true)
+    private String displayName;
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_role",
             joinColumns = {@JoinColumn(name = "user_id")},
