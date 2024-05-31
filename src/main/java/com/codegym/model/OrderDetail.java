@@ -10,7 +10,7 @@ public class OrderDetail {
     private Long orderDetailId;
     private int orderQuantity;
     @ManyToOne
-    private Order orderId;
+    private Orderr orderrId;
     @ManyToOne
     private Product productId;
 }

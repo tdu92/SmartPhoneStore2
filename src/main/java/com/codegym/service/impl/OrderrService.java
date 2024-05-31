@@ -1,31 +1,29 @@
 package com.codegym.service.impl;
 
-import com.codegym.model.Order;
-import com.codegym.repository.OrderRepository;
-import com.codegym.service.IOrderService;
+import com.codegym.model.Orderr;
+import com.codegym.repository.OrderrRepository;
+import com.codegym.service.IOrderrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @Service
-public class OrderService implements IOrderService {
+public class OrderrService implements IOrderrService {
     @Autowired
-    private OrderRepository orderRepository;
-    public List<Order> findAll() {
+    private OrderrRepository orderRepository;
+    public List<Orderr> findAll() {
         return orderRepository.findAll();
     }
-    public Order findById(Long id) {
-        Optional<Order> order = orderRepository.findById(id);
+    public Orderr findById(Long id) {
+        Optional<Orderr> order = orderRepository.findById(id);
         if (order.isPresent()) {
         return order.get(); }
         else return null;
 
     }
-    public void save(Order order) {
+    public void save(Orderr orderr) {
 //        List<Order> orders = order.getCustomer();
 //        if (!orders.isEmpty()) {
 //            Set<Order> managedOrders = new HashSet<>();
@@ -40,8 +38,8 @@ public class OrderService implements IOrderService {
 //        orderRepository.save(order);
     }
     public void remove(Long id) {
-        Order order = orderRepository.findById(id).get();
-        orderRepository.save(order);
+        Orderr orderr = orderRepository.findById(id).get();
+        orderRepository.save(orderr);
     }
 
 }
