@@ -33,10 +33,11 @@ public class User implements Serializable {
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private Set<Role> roles;
 
-    public User(String username, String password, String confirmPassword, Set<Role> roles) {
+    public User(String username, String password, String confirmPassword, String displayName, Set<Role> roles) {
         this.username = username;
         this.password = password;
         this.confirmPassword = confirmPassword;
+        this.displayName= displayName;
         this.roles = roles;
     }
 
@@ -95,4 +96,11 @@ public class User implements Serializable {
         this.enabled = enabled;
     }
 
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
 }
