@@ -23,7 +23,7 @@ roleRepository.save(role);
 
     @Override
     public Role findByName(String name) {
-        return roleRepository.findByName(name);
+        return roleRepository.findByRoleName(name);
     }
 
 

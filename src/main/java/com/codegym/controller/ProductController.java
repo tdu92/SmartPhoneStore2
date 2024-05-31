@@ -1,6 +1,6 @@
-package com.codegym.controller.controller;
-import com.codegym.smartphonestore.model.Product;
-import com.codegym.smartphonestore.service.IProductService;
+package com.codegym.controller;
+import com.codegym.model.Product;
+import com.codegym.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;

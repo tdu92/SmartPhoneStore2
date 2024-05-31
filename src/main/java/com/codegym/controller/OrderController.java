@@ -1,4 +1,4 @@
-package com.codegym.controller.controller;
+package com.codegym.controller;
 
 import com.codegym.model.Order;
 import com.codegym.service.IOrderService;
@@ -31,7 +31,5 @@ public class OrderController {
         return new ResponseEntity<>(message, HttpStatus.CREATED);
 
     }
-
-
 
 }

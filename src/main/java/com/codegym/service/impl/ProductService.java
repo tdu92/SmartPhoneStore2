@@ -1,9 +1,9 @@
 package com.codegym.service.impl;
 
 
-import com.codegym.smartphonestore.model.Product;
-import com.codegym.smartphonestore.repository.ProductRepository;
-import com.codegym.smartphonestore.service.IProductService;
+import com.codegym.model.Product;
+import com.codegym.repository.ProductRepository;
+import com.codegym.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

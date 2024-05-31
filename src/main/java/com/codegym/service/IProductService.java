@@ -1,6 +1,6 @@
 package com.codegym.service;
 
-import com.codegym.smartphonestore.model.Product;
+import com.codegym.model.Product;
 
 import java.util.List;
 

@@ -1,13 +1,15 @@
 package com.codegym.service.impl;
 
-import com.codegym.smartphonestore.model.Order;
-import com.codegym.smartphonestore.repository.OrderRepository;
-import com.codegym.smartphonestore.service.IOrderService;
+import com.codegym.model.Order;
+import com.codegym.repository.OrderRepository;
+import com.codegym.service.IOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class OrderService implements IOrderService {
@@ -35,7 +37,7 @@ public class OrderService implements IOrderService {
 //            }
 //            order.setCustomerId(managedOrders);
 //        }
-        orderRepository.save(order);
+//        orderRepository.save(order);
     }
     public void remove(Long id) {
         Order order = orderRepository.findById(id).get();
