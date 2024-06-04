@@ -1,5 +1,7 @@
 package com.codegym.controller;
+import com.codegym.model.Brand;
 import com.codegym.model.Product;
+import com.codegym.service.IBrandService;
 import com.codegym.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -12,43 +14,43 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/products")
-public class ProductController {
+@RequestMapping("/brands")
+public class BrandController {
     @Autowired
-    private IProductService productSer;
+    private IBrandService brandSer;
     @GetMapping("")
-    public ResponseEntity<List<Product>> getAll(){
-        List<Product> list = productSer.findAll();
+    public ResponseEntity<List<Brand>> getAll(){
+        List<Brand> list = brandSer.findAll();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @PostMapping("")
-    public ResponseEntity<String> add(@RequestBody Product product){
-        productSer.save(product);
+    public ResponseEntity<String> add(@RequestBody Brand brand){
+        brandSer.save(brand);
         String message="Add success";
         return new ResponseEntity<>(message, HttpStatus.CREATED);
     }
     @PutMapping("{id}")
-    public ResponseEntity<String> edit(@PathVariable Long id, @RequestBody Product product){
-        product.setProductId(id);
-        productSer.save(product);
+    public ResponseEntity<String> edit(@PathVariable Long id, @RequestBody Brand brand){
+        brand.setBrandId(id);
+        brandSer.save(brand);
         String message="Edit success";
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
     @DeleteMapping("{id}")
     public ResponseEntity<String> delete(@PathVariable Long id){
-        productSer.remove(id);
+        brandSer.remove(id);
         String message="Delete success";
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
     @GetMapping("{id}")
-    public ResponseEntity<Product> findById(@PathVariable Long id){
-        Product product = productSer.findById(id);
-        return new ResponseEntity<>(product, HttpStatus.OK);
+    public ResponseEntity<Brand> findById(@PathVariable Long id){
+        Brand brand = brandSer.findById(id);
+        return new ResponseEntity<>(brand, HttpStatus.OK);
     }
     @GetMapping("/search")
-    public ResponseEntity<List<Product>> search(@Param("name")String name){
-        List<Product> list = productSer.findByNameContaining(name);
+    public ResponseEntity<List<Brand>> search(@Param("name")String name){
+        List<Brand> list = brandSer.findByBrandNameContaining(name);
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 }

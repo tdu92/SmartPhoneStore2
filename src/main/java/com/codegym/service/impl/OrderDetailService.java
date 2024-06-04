@@ -32,6 +32,4 @@ public class OrderDetailService implements IOrderDetailService {
         orderDetailRepository.save(orderDetail);
     }
 
-
-
 }
